@@ -270,3 +270,13 @@ footer {
     color:#444;
   }
 }
+
+div.content pre {
+  background: #F5F5F5;
+  padding: 10px;
+  color: #FFF;
+  overflow-x: auto;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 12px;
+  border: none;
+}
