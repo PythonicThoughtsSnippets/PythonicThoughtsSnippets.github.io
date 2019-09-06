@@ -2,8 +2,7 @@
 I created the Pythonic Thoughts Snippets series out of the need to share my connection with the code I write, how my vision and style evolve, how my mindset for code writing shapes with time in a continuous quest towards writing more maintainable, easy to read, robust and beautiful code. I hope you find these little articles of interest and also share your comments. These posts are the result of many online and book readings, discussions with others and hours spent staring at the code. Please consider I am not a purely computational person, I am a biochemist passionate about coding that have learned my way through this beautiful discipline. - Joao M.C. Teixeira, 2019.
 
 # 0: Parameter Validation on Class Creation
-_19.08.2019_
-[download the code snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-0.py)
+_19.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-0.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 This post serves as tutorial, question to the audience and challenge. I will explain how I solved the problem but I am yet far to be sure about the most correct and Pythonic way to address this question.
 
@@ -91,8 +90,7 @@ class Module1(ModuleBase):
 ```
 
 # 1: Dictionaries for Control Flow
-_19.08.2019_
-[download the code snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-1.py)
+_19.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-1.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 We are all well adapted to the if...elif...else: control flow statements. But these statements some times (well... many times) just become too many or they instead encapsulate many lines of codes inside. At a given moment, or above certain complexity, it becomes awkward and difficult to follow the flow of the code and to retain all the nesting in one's brain's RAM. "Flat is better then nested", isn't it? :)
 
@@ -180,8 +178,7 @@ def translate_4(val):
 ```
 
 # 2: Unpacking Conditional Expressions
-_15.08.2019_
-[download the code snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-2.py)
+_15.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-2.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 Hello,
 
@@ -244,8 +241,7 @@ And that’s it, my yesterday Pythonic encounter. The solution was quite easy an
 Cheers
 
 # 3: logging library wide and to end-users
-_26.08.2019_
-[download the code snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-3.py)
+_26.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-3.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 I have start using the [Python logging library](https://docs.python.org/3/library/logging.html) about one year ago it is definitively a powerful lib that you (maybe) should embrace on your code development.
 
@@ -422,8 +418,7 @@ I hope you find this entry useful,
 Best,
 
 # 4: Factory Method Creational Pattern
-_31.08.2019_
-[download the code snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-4.py)
+_31.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-4.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 Some things are not trivial to learn, other are even difficult, but some are not about learning, but actually incorporating behaviours and methodologies in our own practices, and make their use a natural process.
 
