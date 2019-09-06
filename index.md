@@ -439,8 +439,8 @@ It was definitively not one nor twice that I read descriptions and explanations 
 
 But, despite all my cheerful readings on the matter and struggles with my code, just the other day I came to realize how to properly build this pattern and in which situations apply it.
 
-**EDIT (05.09.2019):**
-_ There's a very interesting fault in the design shown in the original example of this post, I came to understand it when I was actually using the pattern. Can you spot it before hand? Bellow is the original example from this post, and at the end, an updated explanation._
+**EDIT (05.09.2019):**  
+_There's a very interesting fault in the design shown in the original example of this post, I came to understand it when I was actually using the pattern. Can you spot it before hand? Bellow is the original example from this post, and at the end, an updated explanation._
 
 Here's an example of the Factory Method on Python. Honestly, I am naming my example and example of Factory Method because is as I see it from what I can interpret as a Factory Method from my readings. Please be gentle and let me know if I am mistaken on the naming of this strategy. Regardless of the name, the aim of the approach is "straight forward": to allow a common public interface for subclasses that manage different environments but that have to communicate with the rest of the application (or users) in the same way, hence, providing the same formatted output. I see the [Python pathlib module](https://docs.python.org/3/library/pathlib.html) is a clear example of this strategy of implementation, where PosixPath or WindowsPath are returned upon initiating Path.
 
