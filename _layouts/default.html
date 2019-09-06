@@ -27,11 +27,12 @@
         <p class="view"><a href="https://github.com/joaomcteixeira">View My GitHub Profile</a></p>
         
         <p class="view"><a href="https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets">Code Snippets Repository</a></p>
-
+        
+        {% include toc.html html=content %}
+        
       </header>
       <section>
       
-      {% include toc.html html=content %}
       {% include anchor_headings.html html=content %}
 
       </section>
