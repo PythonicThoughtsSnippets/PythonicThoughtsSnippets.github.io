@@ -1,3 +1,6 @@
+# Motivatin
+I created the Pythonic Thoughts Snippets series out of the need to share my connection with the code I write, how my vision and style evolve, how my mindset for code writing shapes with time in a continuous quest towards writing more maintainable, easy to read, robust and beautiful code. I hope you find these little articles of interest and also share your comments. These posts are the result of many online and book readings, discussions with others and hours spent staring at the code. Please consider I am not a purely computational person, I am a biochemist passionate about coding that have learnt my way through this beautiful discipline. - Joao M.C. Teixeira, 2019.
+
 # Parameter Validation on Class Creation
 
 This post serves as tutorial, question to the audience and challenge. I will explain how I solved the problem but I am yet far to be sure about the most correct and Pythonic way to address this question.
