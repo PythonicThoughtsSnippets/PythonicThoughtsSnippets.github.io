@@ -14,11 +14,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">Pythonic<br>Thoughts<br>Snippets</a></h1>
-        
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
+        <a href="{{ "/" | absolute_url }}"><img src="{{site.logo | relative_url}}" alt="Logo" /></a>
         
         <p>Because simplicity matters and flat is better than nested this site is the way it is.<br><i>Continously under construction.</i></p>
         
@@ -32,9 +28,6 @@
         
         <p class="view"><a href="http://bit.ly/joaomcteixeira">View My Web Page</a></p>
         
-        <p>2019</p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        
       </header>
       <section>
       
@@ -44,7 +37,8 @@
 
       </section>
       <footer>
-        
+        <p><small>Joao M.C. Teixeira - 2019</small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
