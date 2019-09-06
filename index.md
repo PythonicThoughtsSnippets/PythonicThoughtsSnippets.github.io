@@ -1,4 +1,4 @@
-#[Parameter Validation on Class Creation](#param-valid-class-creation)
+# Parameter Validation on Class Creation
 
 This post serves as tutorial, question to the audience and challenge. I will explain how I solved the problem but I am yet far to be sure about the most correct and Pythonic way to address this question.
 
@@ -85,7 +85,7 @@ class Module1(ModuleBase):
         return
 ```
 
-#[Dictionaries for Control Flow](#dict-control-flow)
+# Dictionaries for Control Flow
 
 We are all well adapted to the if...elif...else: control flow statements. But these statements some times (well... many times) just become too many or they instead encapsulate many lines of codes inside. At a given moment, or above certain complexity, it becomes awkward and difficult to follow the flow of the code and to retain all the nesting in one's brain's RAM. "Flat is better then nested", isn't it? :)
 
