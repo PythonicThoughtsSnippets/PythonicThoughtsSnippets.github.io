@@ -1,6 +1,6 @@
 # Motivation
 
-I created the Pythonic Thoughts Snippets series out of the need to share my connection with the code I write, how my vision and style evolve, how my mindset for code writing shapes with time in a continuous quest towards writing more maintainable, easy to read, robust and beautiful code. This series is not about HowTo's but about discussions that facilitate a continuous learning based on the acquisition of cleaner and improved coding practices, understanding and patterns.  
+I created the **Pythonic Thoughts Snippets** _series_ out of the need to share my connection with the code I write, how my vision and style evolve, how my mindset for code writing shapes with time in a continuous quest towards writing more maintainable, easy to read, robust and beautiful code. This series is not about HowTo's but about discussions that facilitate a continuous learning based on the acquisition of cleaner and improved coding practices, understanding and patterns.  
 
 In this web site you will find the discussions about the specific topics together with their corresponding code snippets. Code snippets are also available for download separately in the [Code Snippets Repository](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets).
 
