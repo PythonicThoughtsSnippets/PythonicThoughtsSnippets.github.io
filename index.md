@@ -28,8 +28,6 @@ I want to extend the implementation of the classes to the possibility to force i
 Additionally, I implemented a "testit" option that tests the class instantiation for a given set of parameters and reports on possible value errors by returning Report class object instead of the class itself.  Here's an example:
 
 ```python
-# Example
-
 c = Module1(param1=1)
 # this would rise error because param1 must be
 # negative int.
@@ -271,7 +269,7 @@ It is definitively not straightforward because we will be making use of advanced
 This is the solution I came by. Please share your thoughts if you have a different or better approach. I am far from being a full expert on the Python logging library.
 
 ```
-# Lets consider the following project structure:
+> Consider the following project structure:
 MyApp/
     __init__.py
     base.py (here is where your main API interface goes)
@@ -447,17 +445,6 @@ Here's an example of the Factory Method on Python. Honestly, I am naming my exam
 Here's the code example, as always with this series, let me know your thoughts.
 
 ```python
-# Python Thoughts Snippet #4 - Factory Method - Creational Pattern
-# Python 3.7
-# 2019/08/31
-# THIS CODE IS NOT MEANT TO BE FUNCTIONAL OR EXECUTABLE,
-# IT IS A REPRESENTATION OF AN IDEA AND AN EXAMPLE TO RAISE DISCUSSION.
-
-# As a common practice in my Pythonic Thoughts Snippets,
-# I am not going into the details of the minor implementations,
-# on doubts please search elsewhere on the web, there are countless of
-# amazing explanations; here, we focus on the broader concept
-
 from abc import ABC, abstractmethod
 
 
@@ -533,7 +520,6 @@ _The problem with the example above is that you can never instantiate SubClass1 
 This happens because the abstract interface is coupled with the Factory Method, that is, SubClass1 and SubClass2 inherit from Interface. It is easy to solve this by decoupling the ABC interface from the Factory. Easy, right? Yet so difficult to spot._
 
 ```python
-# An updated discussion:
 from abc import ABC, abstractmethod
 
 
