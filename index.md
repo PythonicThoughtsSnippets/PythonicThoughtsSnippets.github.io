@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-{% include toc.html html=content baseurl="https://pythonicthoughtssnippets.github.io/" %}
-* * *
 {% include motivation.md %}
 * * *
 {% include pts0.md %}
