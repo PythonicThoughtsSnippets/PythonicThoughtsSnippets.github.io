@@ -90,7 +90,7 @@
         {% if beforeHeading %}
           {{ anchor }}{{ header }}
         {% else %}
-          <a href="#{{ html_id}}">{{ header }}</a>{{ anchor }}
+          <a style="color:#222000;" href="#{{ html_id}}">{{ header }}</a>{{ anchor }}
         {% endif %}
         {{ include.bodySuffix }}
       </h{{ _workspace | last }}
