@@ -3,3 +3,9 @@ google_analytics: UA-147318220-1
 show_downloads: "false"
 logo: /pics/logo_wide.png
 markdown: kramdown
+github:
+  is_project_page: true
+  repository_url: https://github.com/PythonicThoughtsSnippets
+  repository_name: PythonicThoughtsSnippets
+  owner_url: https://github.com/joaomcteixeira
+  owner_name: joaomcteixeira
