@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include toc.html html=content baseurl="{{ "/" | absolute_url }}" %}
+{% include toc.html html=content baseurl="https://pythonicthoughtssnippets.github.io/" %}
 * * *
 {% include motivation.md %}
 * * *
