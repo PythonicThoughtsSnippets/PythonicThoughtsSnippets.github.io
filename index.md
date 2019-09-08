@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include toc.html html=content %}
+{% include toc.html html=content baseurl="{{ "/" | absolute_url }}" %}
 * * *
 {% include motivation.md %}
 * * *
