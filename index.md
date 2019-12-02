@@ -15,3 +15,5 @@ layout: default
 * * *
 {% include pts5.md %}
 * * *
+{% include pts6.md %}
+* * *
