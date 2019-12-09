@@ -38,16 +38,16 @@ def test_my_file_parser(self, fname):
         ],
     )
 def parser_data1(request):
-    parser = MyFileParser(fname)
+    parser = MyFileParser(request.param)
     data1 = parser.data_foo()
     return data1
 
 
-def test_parser_data1_type(self, parser_data1):
+def test_parser_data1_type(parser_data1):
     assert isinstance(parser_data1, list)
 
 
-def test_parser_data1_len(self, parser_data1):
+def test_parser_data1_len(parser_data1):
     assert len(parse_data1) == 50
 ```
 
