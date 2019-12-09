@@ -23,7 +23,7 @@ Bellow is a simple transformation of a parametrized test split into two *fixture
         (Path('file2')),
         ],
     )
-def test_my_file_parser(self, fname):
+def test_my_file_parser(fname):
     parser = MyFileParser(fname)
     data1 = parser.data_foo()
     assert isinstance(data1, list)
