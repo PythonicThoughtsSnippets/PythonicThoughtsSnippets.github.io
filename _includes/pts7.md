@@ -59,9 +59,9 @@ Is there something that could be improved on this entry?i Share your thoughts, [
 
 ## Further readings
 
-* https://docs.pytest.org/en/latest/fixture.html
-* https://medium.com/ideas-at-igenius/fixtures-and-parameters-testing-code-with-pytest-d8603abb390a
-* https://stackoverflow.com/questions/47402435
+* [pytest docs fixture](https://docs.pytest.org/en/latest/fixture.html)
+* [fixtures and parameters at Medium](https://medium.com/ideas-at-igenius/fixtures-and-parameters-testing-code-with-pytest-d8603abb390a)
+* [StackOverFlow 47402435](https://stackoverflow.com/questions/47402435)
 
 ## tags
 
