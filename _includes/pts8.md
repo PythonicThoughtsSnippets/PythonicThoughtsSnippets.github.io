@@ -3,7 +3,6 @@ _12.01.2020_ - no code for this post - [Back to top](https://pythonicthoughtssni
 
 I had a brief conversation on IDEs the other day with a new student that come to work with me for this semester. She is new to Python and therefore the IDE ecosystem is unknown to her. I wrote her this e-mail to introduce the matter and motivate, and mentor, her on the IDE quest. I felt to share it here. I deeply apologize to the developers of the IDEs I refer if there is something technically wrong in my words. _The text bellow does not compromise the privacy of anyone as the email is completely neutral and could be equally addressed to any new Python student._
 
-*
 Hi,
 
 Sharing with you some information on IDEs (Integrated development environment) because you showed interest. In the muggle's words of mine, an IDE is basically a text editor with enhanced features that connect the code you are writing with the actual programming language so it allows you to use cool features, like F5 to run the code on a side window.
@@ -24,4 +23,3 @@ Taking home message is that if you are using one that feels to big and you loose
 I shared this with you so you get a bit of introduction to this other world in programming, that is the choice and battle for the best IDE; and because I noticed you were very interested. I like to talk about these things so feel free to come by.
 
 see you tomorrow,
-*
