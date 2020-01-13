@@ -19,3 +19,5 @@ layout: default
 * * *
 {% include pts7.md %}
 * * *
+{% include pts8.md %}
+* * *
