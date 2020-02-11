@@ -1,6 +1,7 @@
 ---
 title: "PTS 1: Dictionaries for control flow"
 tags: [controlflow, dictionaries]
+author: "Joao MC Teixeira"
 ---
 _19.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-1.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 

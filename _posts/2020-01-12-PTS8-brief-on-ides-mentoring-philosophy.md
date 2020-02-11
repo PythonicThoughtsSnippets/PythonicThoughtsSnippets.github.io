@@ -1,6 +1,7 @@
 ---
 title: "PTS 8: Brief on IDEs - mentoring philosophy"
 tags: [mentoring, IDEs]
+author: "Joao MC Teixeira"
 ---
 _12.01.2020_ - no code for this post - [Back to top](https://pythonicthoughtssnippets.github.io)
 

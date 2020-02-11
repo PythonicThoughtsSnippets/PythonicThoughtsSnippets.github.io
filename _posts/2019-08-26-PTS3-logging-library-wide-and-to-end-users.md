@@ -1,6 +1,7 @@
 ---
 title: "PTS 3: Logging library-wide"
 tags: [logging]
+author: "Joao MC Teixeira"
 ---
 _26.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-3.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 

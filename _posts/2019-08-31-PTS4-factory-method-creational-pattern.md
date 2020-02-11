@@ -1,6 +1,7 @@
 ---
 title: "PTS 4: Factory method"
 tags: [OOP] 
+author: "Joao MC Teixeira"
 ---
 _31.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-4.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 

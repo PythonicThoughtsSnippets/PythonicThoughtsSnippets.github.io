@@ -1,6 +1,7 @@
 ---
 title: "PTS 6: Test-driven development"
 tags: [TDD, test-driven development]
+author: "Joao MC Teixeira"
 ---
 _02.12.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-6.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 

@@ -1,5 +1,6 @@
 ---
 title: "PTS 5: Separate Logics"
+author: "Joao MC Teixeira"
 ---
 _31.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-5.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 

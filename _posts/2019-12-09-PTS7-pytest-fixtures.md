@@ -1,6 +1,7 @@
 ---
 title: "PTS 7: Python fixtures"
 tags: [pytest, TDD]
+author: "Joao MC Teixeira"
 ---
 _09.12.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-7.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
