@@ -1,4 +1,3 @@
-# 8: Brief on IDEs - mentoring philosophy
 _12.01.2020_ - no code for this post - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 I had a brief conversation on IDEs the other day with a new student that come to work with me for this semester. She is new to Python and therefore the IDE ecosystem is unknown to her. I wrote her this e-mail to introduce the matter and motivate, and mentor, her on the IDE quest. I felt to share it here. I deeply apologize to the developers of the IDEs I refer if there is something technically wrong in my words. _The text bellow does not compromise the privacy of anyone as the email is completely neutral and could be equally addressed to any new Python student._

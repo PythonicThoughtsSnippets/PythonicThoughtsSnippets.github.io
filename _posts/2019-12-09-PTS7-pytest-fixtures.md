@@ -1,4 +1,3 @@
-# 7: TDD - pytest fixtures
 _09.12.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-7.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 As code goes by my hands, my `spider sense` gets refined and `tingles` sooner than before on situations where *there must be a better way to do it!*.

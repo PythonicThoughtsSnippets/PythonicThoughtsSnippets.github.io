@@ -1,4 +1,3 @@
-# 4: Factory Method Creational Pattern
 _31.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-4.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 Some things are not trivial to learn, other are even difficult, but some are not about learning, but actually incorporating behaviours and methodologies in our own practices, and make their use a natural process.

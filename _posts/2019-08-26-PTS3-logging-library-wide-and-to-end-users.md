@@ -1,4 +1,3 @@
-# 3: logging library wide and to end-users
 _26.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-3.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 I have start using the [Python logging library](https://docs.python.org/3/library/logging.html) about one year ago it is definitively a powerful lib that you (maybe) should embrace on your code development.

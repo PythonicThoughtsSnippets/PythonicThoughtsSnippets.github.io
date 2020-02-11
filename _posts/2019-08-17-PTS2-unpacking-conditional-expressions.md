@@ -1,4 +1,3 @@
-# 2: Unpacking Conditional Expressions
 _15.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-2.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 Hello,

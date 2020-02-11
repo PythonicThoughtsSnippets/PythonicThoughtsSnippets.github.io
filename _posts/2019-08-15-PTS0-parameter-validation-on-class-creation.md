@@ -1,4 +1,3 @@
-# 0: Parameter Validation on Class Creation
 _19.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-0.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 This post serves as tutorial, question to the audience and challenge. I will explain how I solved the problem but I am yet far to be sure about the most correct and Pythonic way to address this question.
