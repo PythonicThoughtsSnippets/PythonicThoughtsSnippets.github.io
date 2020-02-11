@@ -10,7 +10,7 @@ layout: default
 <ul>
   {% for post in site.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{post.date}} - {{ post.title }}</a></h2>
+      <h2><a href="{{ post.url }}">{{post.date | to_date_string }} - {{ post.title }}</a></h2>
     </li>
   {% endfor %}
 </ul>
