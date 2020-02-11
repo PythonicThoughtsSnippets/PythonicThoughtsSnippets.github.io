@@ -3,21 +3,14 @@ layout: default
 ---
 {% include motivation.md %}
 * * *
-{% include pts0.md %}
-* * *
-{% include pts1.md %}
-* * *
-{% include pts2.md %}
-* * *
-{% include pts3.md %}
-* * *
-{% include pts4.md %}
-* * *
-{% include pts5.md %}
-* * *
-{% include pts6.md %}
-* * *
-{% include pts7.md %}
-* * *
-{% include pts8.md %}
-* * *
+<h1>Latest Posts</h1>
+
+<i>Click on the post title to read the full post.</i>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    </li>
+  {% endfor %}
+</ul>
