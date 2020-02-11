@@ -1,3 +1,6 @@
+---
+title: "PTS 5: Separate Logics"
+---
 _31.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-5.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 A quick view on business and administrative logic separation. I found myself coding this way as of today. I will write more on this in the near future.

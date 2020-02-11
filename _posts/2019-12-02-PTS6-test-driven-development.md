@@ -1,3 +1,7 @@
+---
+title: "PTS 6: Test-driven development"
+tags: [TDD, test-driven development]
+---
 _02.12.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-6.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 In the beginning I didn't understand the need for them, then I was smashed by their debugging power, then I struggled to make their use a daily work practice, now I cannot conceive writing code without compulsive test driven development. Now, I simply can't work without using three _screens_, one for the logic, other for the tests and other to run the tests; and I jump continuously between these three _windows_, _terminals_, _spliscreens_.

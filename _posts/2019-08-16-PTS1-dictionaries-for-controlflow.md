@@ -1,3 +1,7 @@
+---
+title: "PTS 1: Dictionaries for control flow"
+tags: [controlflow, dictionaries]
+---
 _19.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-1.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 We are all well adapted to the if...elif...else: control flow statements. But these statements some times (well... many times) just become too many or they instead encapsulate many lines of codes inside. At a given moment, or above certain complexity, it becomes awkward and difficult to follow the flow of the code and to retain all the nesting in one's brain's RAM. "Flat is better then nested", isn't it? :)
