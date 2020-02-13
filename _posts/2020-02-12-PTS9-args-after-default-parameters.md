@@ -1,5 +1,5 @@
 ---
-title: "PTS 9: Args packing after non-default arguments
+title: "PTS 9: Args packing after non-default arguments"
 tags: [python, python functions, functions, arguments, keyword arguments, positional arguments]
 author: "Joao MC Teixeira"
 ---
