@@ -30,7 +30,7 @@ def myfunc(arg1, arg2, *args, kw1=1, kw2='string', kw3=None, **kwargs):
     return
 ```
 
-**Secondly**, my _brain_ is getting more Pythonic than I! I was actually writing something completely new for me without even realizing; simply, expecting it to work. And only noticed some hours later.
+**Secondly**, my _brain_ is getting more Pythonic than me! I was actually writing something completely new for me without even realizing; simply, expecting it to work. And only noticed some hours later.
 
 Did you knew this was possible? [Let me know](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/issues/9).
 
