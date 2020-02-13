@@ -14,6 +14,7 @@ I am writing different config file readers with some enhanced features needed fo
 from myverycoolproject.libs.config_readers_pkg.reader_json import CReaderJson
 from myverycoolproject.libs.config_readers_pkg.reader_param import CReaderParam
 
+
 _readers = {
     CReaderJson,
     CReaderParam,
@@ -52,6 +53,7 @@ Interestingly, one can also use the `register` feature as part of the test suite
 # some where in tests/test_config_readers.py
 from myverycoolproject.libs.config_readers import config_readers
 from myverycoolproject.libs.config_readers_pkg.base import ConfigReader
+
 
 def test_config_readers_dict():
     """Testing config_readers dict is functional."""
