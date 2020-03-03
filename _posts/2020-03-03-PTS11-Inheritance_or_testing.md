@@ -1,5 +1,5 @@
 ---
-title: "PTS 11: Favouring inheritance or testing?
+title: "PTS 11: Using tests over certain inheritance.
 author: "Joao MC Teixeira"
 tags: [Python, Programming, OOP, Object-oriented Programming, Test-driven development, testing, tests, pytest, design patterns]
 ---
