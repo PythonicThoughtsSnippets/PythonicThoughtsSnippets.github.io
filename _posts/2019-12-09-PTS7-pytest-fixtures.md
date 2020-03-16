@@ -1,5 +1,5 @@
 ---
-title: "PTS 7: Python fixtures"
+title: "PTS 7: pytest fixtures"
 tags: [pytest, TDD]
 author: "Joao MC Teixeira"
 ---
