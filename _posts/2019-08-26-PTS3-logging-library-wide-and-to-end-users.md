@@ -1,9 +1,11 @@
 ---
 title: "PTS 3: Logging library-wide"
-tags: [logging]
+tags: [logging, log, package, application, Python, Python programming]
 author: "Joao MC Teixeira"
 ---
 _26.08.2019_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-3.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
+
+**EDIT (29.04.2020):** I have reviewed this strategy in a new post -> [PTS-12](https://pythonicthoughtssnippets.github.io/2020/04/30/PTS12-logging-library-wide-and-to-end-users_version_2.html)
 
 I have start using the [Python logging library](https://docs.python.org/3/library/logging.html) about one year ago it is definitively a powerful lib that you (maybe) should embrace on your code development.
 

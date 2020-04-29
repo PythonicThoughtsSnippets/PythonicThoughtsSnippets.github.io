@@ -3,12 +3,12 @@ title: "PTS 12: Logging library-wide, reviewed"
 tags: [log, logging, Python, Python Programming]
 author: "Joao MC Teixeira"
 ---
-29.04.2020_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-12.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
+_29.04.2020_ - [Download Code Snippet](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/blob/master/pts-12.py) - [Back to top](https://pythonicthoughtssnippets.github.io)
 
 I started using the [Python logging library](https://docs.python.org/3/library/logging.html) a couple of years ago, it is definitively a powerful lib, and I encourage you to embrace it in your code developments.
 
 There are countless web pages with *HowTo's* and tutorials explaining how to set a logging system for your Python one-file script. However, it is difficult to find places that explain how to set up the Python logging library application-wide, and how to properly integrate and share the `logging` in all your application modules comfortably. You can still find some examples on the web and in the [official documentation cookbook](https://docs.python.org/3/howto/logging-cookbook.html). The referred lack of tutorials is especially true if your project focuses on both library development and non-developer interface distribution. In these cases, it is necessary to set up the logging such that it provides a proper output when users are utilizing your application as a library and when users use it as stand-alone software. In the latter case, end-users will expect `.log` and/or `.debug` files with run records. On the other hand, users of your libraries won't need such files, and almost certainly a message printed to the `sys.stdout` or `sys.stderr` suffices.
-So, the question remains on how to set up such difference interfaces properly. You will see that once configured, the set up looks quite apparent. But, honestly, it takes time to decompose the `logging` functionalities to a minimum set of operations that meets these requirements. For this logging configuration, we will make use of two main concepts: 1) global variables and 2) the fact that we can configure the `logging` dynamically. I will present the solution I currently using. Please share your thoughts if you have a different or better approach. 
+So, the question remains on how to set up such difference interfaces properly. You will see that once configured, the set up looks quite apparent. But, honestly, it takes time to decompose the `logging` functionalities to a minimum set of operations that meets these requirements. For this logging configuration, we will make use of two main concepts: 1) global variables and 2) the fact that we can configure the `logging` dynamically. I will present the solution I currently using. Please share your thoughts if you have a different or better approach.
 
 ## Configuring the logger widely
 
