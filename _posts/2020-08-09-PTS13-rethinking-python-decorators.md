@@ -4,6 +4,7 @@ tags: [Python, Python 3.8, Python Programming, decorators, closures, high-order 
 author: "Joao MC Teixeira"
 ---
 _09.08.2020_ - [Back to top](https://pythonicthoughtssnippets.github.io)
+
 In this article, I will discuss the implications of Python **decorators** in software architecture, the drawbacks that emerge from the common recommendations and, finally, discuss an alternative way to construct and think about *decorators*.
 
 In detail, I will go through four topics:
