@@ -10,11 +10,11 @@ In this article, I will discuss the implications of Python **decorators** in sof
 In detail, I will go through four topics:
 
 1. realize that the process of `@decoration` is actually a `@mutation`, and the implications thereof
-1. avoid *mutation* using the `decorator()` syntax, instead of the `@` syntax - these are not synonims!
+1. avoid *mutation* using the `decorator()` syntax, instead of the `@` syntax - these are not synonymous!
 1. understand the limitations of the `decorator()` construction in pickling and multiprocessing
-1. rethink and rewrite decorators as high-order functions, instead of closures, to solve all previous preblems
+1. rethink and rewrite decorators as high-order functions, instead of closures, to solve all previous problems
 
-In this article, I do not alter Python syntax or use code outside standard library; instead, I present and propose a change in the nomenclature and conceptualization of decorators in the contexts of software development and of how they are discussed in books and tutorials.
+In this article, I do not alter Python syntax or use code outside the standard library; instead, I present and propose a change in the nomenclature and conceptualization of decorators in the contexts of software development and of how they are discussed in books and tutorials.
 
 I assume the reader is fluent in the concept of Python decorators, normal and parametrizable decorators, high-order functions, and closures. If not, there are countless descriptions online and in books, I invite the reader to investigate those first.
 
@@ -24,7 +24,7 @@ Having said this, let us proceed `:-)`:
 
 What drove me to write this post was the understanding that *decorating functions* is, in fact, a process which carries the burden of absolute coupling between the function and the decorator and that such burden is amplified when the construction of decorators is abused by the incepted need to use the *sweet* `@decorator` syntax -- which everybody seems to be looking for an opportunity to use (me the first).
 
-Let us uncover the intrinsic coupling created by of the `@decorator` syntax, we will go through some examples:
+Let us uncover the intrinsic coupling created by the `@decorator` syntax, we will go through some examples:
 
 
 ```python
@@ -64,7 +64,7 @@ calculation(1, 2)
 
 `calculation(1, 2)` performed as expected.
 
-Though using the `@timeme` syntax suggested so fiercefully in tutorials, I found by myself (Pain-Driven development as forged by others) that this construction hinders the development of **complex packages or applications**.
+Though using the `@timeme` syntax suggested so forcefully in tutorials, I found by myself (Pain-Driven development as forged by others) that this construction hinders the development of **complex packages or applications**.
 
 **The reason:** it is impossible (to my knowledge) to recover the original function using the decorator public interface. In other words, forever during runtime, `calculation` is now *decorated*, and such decoration cannot be undone. `calculation` is no longer the original `calculation` but is, instead, the decorated version.
 
@@ -110,7 +110,7 @@ calculation_2.__dict__['__wrapped__']
 ```
     <function __main__.calculation_2(a, b, c=4)>
 
-Well, thanks to `@functools.wraps`, obtaining the original function from a parametrizable decorator is equal as for a basic decorator. But still it goes through a dunder interface.
+Well, thanks to `@functools.wraps`, obtaining the original function from a parametrizable decorator is equal as for a basic decorator. But still, it goes through a dunder interface.
 
 The same hold true for parametrizable decorators:
 
@@ -142,7 +142,7 @@ calculation_3.__dict__['__wrapped__'](1, 2)
 
 ## Conclusion of 1)
 
-Despite the `@decorator` syntax is well favoured in books and tutorials as the main, and almost only, way to create decorators, it does carry the bit burden of coupling. Why do we care of such coupling? Honestly, this coupling might be irrelevant if the end product is a one page script. But, if the end product if a complex software with several packages full of modules with multiple workflows, accessing the original function at a certain moment of the run-time maybe crucial -- actually it is for my projects.
+Despite the `@decorator` syntax is well-favored in books and tutorials as the main, and almost only, way to create decorators, it does carry the bit burden of coupling. Why do we care about such coupling? Honestly, this coupling might be irrelevant if the end product is a one-page script. But, if the end product if a complex software with several packages full of modules with multiple workflows, accessing the original function at a certain moment of the run-time may be crucial -- actually, it is for my projects.
 
 # 2) Avoid mutation and do actually decorate!
 
@@ -171,15 +171,15 @@ myfunc = decorator(myfunc)
 
 **Wrong!** `:-)`.
 
-The difference between these two syntaxes goes well beyond a *syntax-sugar*. The first one, `@decorator`, is evaluated at the function's definition time; while the second, highlighed above, is evaluated after `myfunc` is defined. Yet, taking the exact example above, both return the same object.
+The difference between these two syntaxes goes well beyond a *syntax-sugar*. The first one, `@decorator`, is evaluated at the function's definition time; while the second, highlighted above, is evaluated after `myfunc` is defined. Yet, taking the exact example above, both return the same object.
 
 Understanding and realizing the differences between these two methods of construction has huge implications on software architecture and design.
 
 Despite both syntaxes are presented widely in books and forums, **the second one is generally (if not always) discouraged** and, for most of the times just presented briefly in the last sentence of the decorator explanation; likely because the `@decorator` syntax just looks prettier. Here, I want to emphasize the fact that despite looking uglier *(does it?)*, the `myfunc = decorator(myfunc)` expression opens the door to several understandings and possibilities when building software.
 
-First of all, note that the above extended expression still does not solve our coupling problem. The original `myfunc` is still lost forever, *it is still mutated*. *Why?* It's so simple that it is hard to spot.
+First of all, note that the above extended-expression still does not solve our coupling problem. The original `myfunc` is still lost forever, *it is still mutated*. *Why?* It's so simple that it is hard to spot.
 
-*`myfunc` variable name is reassinged to the decorated object, and the reference to the original function is lost.*
+*`myfunc` variable name is reassigned to the decorated object, and the reference to the original function is lost.*
 
 As simple as that. And despite the `myfunc = decorator(myfunc)` is discouraged in mainstream readings, here I am to encourage it. Combining everything we have discussed so far, we have that the solution to the decorator coupling problem is **to assign the decorated function to another variable**:
 
@@ -196,21 +196,21 @@ myfunc = mutator(myfunc)
 decorated_myfuc = decorator(myfunc)
 ```
 
-**By assigning the decorated function to another variable, both `myfunc` and `decorated_myfunc` can be accessed, or created, indenpendently at anytime in the run-time.** This completely removes the coupling described before. As consequence, our `decorator` does work as a *decorator*, and not as a *mutator*, because the original function is still accessible. Also, `myfunc` can be redecorated with another decorator at a given moment if needed!
+**By assigning the decorated function to another variable, both `myfunc` and `decorated_myfunc` can be accessed, or created, independently at any time in the run-time.** This completely removes the coupling described before. As consequence, our `decorator` does work as a *decorator*, and not as a *mutator*, because the original function is still accessible. Also, `myfunc` can be redecorated with another decorator at a given moment if needed!
 
-Gaël Varoquaux wrote a [post](http://gael-varoquaux.info/programming/decoration-in-python-done-right-decorating-and-pickling.html) highlighting the harm provoked by overusing the `@decorator` syntax, and he noticed also the need to assign decorated functions to another variables. He focused mostly on *pickling* issues related with multiprocessing, while here I am focusing mostly on architectural concepts and drawbacks of the different approaches. I have to say however, it was actually the pickling issue with decorators in multiprocessing that brought me to write this post in the first place and from which the argument has evolved.
+Gaël Varoquaux wrote a [post](http://gael-varoquaux.info/programming/decoration-in-python-done-right-decorating-and-pickling.html) highlighting the harm provoked by overusing the `@decorator` syntax, and he noticed also the need to assign decorated functions to another variable. He focused mostly on *pickling* issues related to multiprocessing, while here I am focusing mostly on architectural concepts and drawbacks of the different approaches. I have to say however, it was the pickling issue with decorators in multiprocessing that brought me to write this post in the first place and from which the argument has evolved.
 
 ## Conclusions from 2)
 
-Having reached this far, we have now conceptualized that the `@decorator` syntax actually **mutates** a function because that code is executed at the function definition moment, while `decorated_myfuc = decorator(myfunc)` **decorates** the function because this code executes at run-time after the function is defined and, moreover, it assings the decorated function to another variable.
+Having reached this far, we have now conceptualized that the `@decorator` syntax **mutates** a function because that code is executed at the function definition moment, while `decorated_myfuc = decorator(myfunc)` **decorates** the function because this code executes at run-time after the function is defined and, moreover, it assigns the decorated function to another variable.
 
-In order to avoid the absolute coupling originated by the `@decorator` syntax, I suggest the developer not to be afraid of defining decorated functions at run-time, both at module level or when the decorated function is needed. For example, right before it is executed or, in case the function is to be used at several places in the package, just define the decorated function at the module level **after** the function definition using the `decorated_myfuc = decorator(myfunc)` syntax. In this way, both the decorated and the original function will always be available.
+To avoid the absolute coupling originated by the `@decorator` syntax, I suggest the developer not be afraid of defining decorated functions at run-time, both at the module level or when the decorated function is needed. For example, right before it is executed or, in case the function is to be used at several places in the package, just define the decorated function at the module level **after** the function definition using the `decorated_myfuc = decorator(myfunc)` syntax. In this way, both the decorated and the original function will always be available.
 
 # 3) We have solved the coupling, now we have pickling problems!
 
-The whole conversation in this post makes sense if we are developing complex software; it has actually little significance when creating single page scripts. Therefore, which complex software does not make use of multiprocessing techniques? And, Multiprocessing uses pickle; so, **how does the argument of this post relates with pickling?** Here, I will show that pickling is not compatible with the uncoupled `myfunc = decorator(func)` syntax, sadly. But we will solve that on topic `4)` `:-)`.
+The whole conversation in this post makes sense if we are developing complex software; it has little significance when creating single page scripts. Therefore, which complex software does not make use of multiprocessing techniques? And, Multiprocessing uses pickle; so, **how does the argument of this post relates with pickling?** Here, I will show that pickling is not compatible with the uncoupled `myfunc = decorator(func)` syntax, sadly. But we will solve that on topic `4)` `:-)`.
 
-Lets define some needs first:
+Let's define some needs first:
 
 
 ```python
@@ -388,9 +388,9 @@ for f in funcs:
 
 ## Conclusion from 3)
 
-The conclusion of this section is straightforward: the synthax `func2 = decorator(func)` that beautifully avoids the coupling between the original function and its decorated version is not pickable and, therefore, not compatible with multiprocessing.
+The conclusion of this section is straightforward: the syntax `func2 = decorator(func)` that beautifully avoids the coupling between the original function and its decorated version is not pickable and, therefore, not compatible with multiprocessing.
 
-So, can we rewrite decorators in a different way? Can we rethink and rewrite decorators in a way that fulfils the non-coupling and pickling requirements?
+So, can we rewrite decorators in a different way? Can we rethink and rewrite decorators in a way that fulfills the non-coupling and pickling requirements?
 
 # 4) Writing decorators as high-order functions
 
@@ -402,11 +402,11 @@ Again, bear in mind that all this effort might seem useless if the end product i
 
 The solution I came to, is to write all decorators as **high-order functions** instead of **closures** (the natural nature of decorators). To quickly state the difference between HO functions and closures, in my words (wiser words can be found elsewhere):
 
-> high-order functions are functions that receive other functions but return non-function (callable) values, while closures, may not receive a function as argument, but return other functions.
+> high-order functions are functions that receive other functions but return non-function (callable) values, while closures, may not receive a function as an argument, but return other functions.
 
-I understood that conceptualizing decorators as high-order functions favour an architecture that remains modular to the core, has no cyclomatic complexity added, and provides a pickable solution in the present and, most likely, in the long-term.
+I understood that conceptualizing decorators as high-order functions favor an architecture that remains modular to the core, has no cyclomatic complexity added, and provides a pickable solution in the present and, most likely, in the long-term.
 
-**How can we actually write decorators as high order functions?**
+**How can we write decorators as high order functions?**
 
 Using [partials](https://docs.python.org/3/library/functools.html#functools.partial)!
 
@@ -460,7 +460,7 @@ reports_calc(1, 2)
     9
 
 
-The above construction behaves exactly as the example before with stacked `@decorators`. Note that the work with `partial` can be done at the moment the decorated function is needed or right after the function is defined in case it needs to be used widely in your application at different contexts. Either way, the original function is always avaible: the `free_calculation` -- there is not coupling associated as we have seen before for the `f2 = d(f1)` syntax.
+The above construction behaves exactly like the example before with stacked `@decorators`. Note that the work with `partial` can be done at the moment the decorated function is needed or right after the function is defined in case it needs to be used widely in your application in different contexts. Either way, the original function is always available: the `free_calculation` -- there is not coupling associated as we have seen before for the `f2 = d(f1)` syntax.
 
 **Are the decorated functions pickable?** That is, can they be used in `multiprocessing` processes? Yes, because using `partial` and `high-order` functions avoids the use of `closures` where pickling fails in the cases identified before.
 
@@ -525,7 +525,7 @@ try_pickle(do_all_calculation)
 
 The **only** problem with parametrizable decorators using `partial` is that the decorator's named parameters need to be named differently from the functions `kwargs`. Personally, I don't consider that a problem at all.
 
-**Note** that the order which partials have to be defined must follow the same order as the `@decorator` syntax - from inward to outward.
+**Note** that the order in which partials have to be defined must follow the same order as the `@decorator` syntax - from inward to outward.
 
 ```python
 @evaluates_3rd
@@ -540,11 +540,11 @@ Using partials provides a way to write and think of decorators as high-order fun
 
 # General Conclusions
 
-Generally speaking, the act of decorate refers to adding a feature to something, feature which can later be removed from the decorated entity at demand and without altering the true nature of the original - for example, wearing an earring.
+Generally speaking, the act of decorating refers to adding a feature to something, a feature which can later be removed from the decorated entity at the demand and without altering the true nature of the original - for example, wearing an earring.
 
 In my opinion, Python **decorators**, as presented in generally in literature and in the [Python Grammar](https://docs.python.org/3/reference/grammar.html?highlight=decorators) (`@decorator` syntax), do not decorate functions, they **mutate** them. A function decorated **at definition time** is decorated forever during the program execution and the original function cannot be reused through a public interface, therefore, in my opinion, the original function is not *decorated*, it is, instead, *mutated*.
 
-By renaming the convention name from **decorator** to **mutator**, it hopefully becomes more clear to the developers the fact that the original function is lost. Most importantly, renaming the convention highlights the unavoidable coupling burden between the decorator constructed through the `@decorator` notation and the function being decorated. The impact of this understandting increases for the development of complex systems rather then single logic scripts.
+By renaming the convention name from **decorator** to **mutator**, it hopefully becomes more clear to the developers the fact that the original function is lost. Most importantly, renaming the convention highlights the unavoidable coupling burden between the decorator constructed through the `@decorator` notation and the function being decorated. The impact of this understanding is more noticeable if you're developing more complex systems rather than single-logic scripts.
 
 Distinguishing a *decoration* from *mutation* operation can be achieved by utilizing the different syntaxes:
 
@@ -558,33 +558,33 @@ def func...
 decorated_function = decorator(func)
 ```
 
-As a consequence, the term **decoration** can be applied nicely in Python using the second expression during run-time. To this point, the new understanding is to break with the convention of teaching the above expressions as equivalent when they are, actually, inheritely different.
+As a consequence, the term **decoration** can be applied nicely in Python using the second expression during run-time. To this point, the new understanding is to break with the convention of teaching the above expressions as equivalent when they are, actually, inherently different.
 
-Investigating further, we realise that the `decorator(func)` expression fails upon pickling from its simplest form to the most complex parametrizable decorators:
+Investigating further, we realize that the `decorator(func)` expression fails upon pickling from its simplest form to the most complex parametrizable decorators:
 
 ```python
-# all these fail pickling
-myfunc = docorator(func)
+# all these fail while pickling
+myfunc = decorator(func)
 
-myfunc = docorator2(decorator(func))
+myfunc = decorator2(decorator(func))
 
-myfunc = docorator(some_parameter)(decorator(func))
+myfunc = decorator(some_parameter)(decorator(func))
 ```
 
-Which forces us to maintain coupling if we want to use multiprocessing techniques. To avoid this, we can rethink decorators as *high-order* functions instead of *closures* and use `functools.partial` to define decorated functions. In a similar line, [Gael Varoquaux suggested defining decorators as scopes in classes.
+This forces us to maintain coupling if we want to use multiprocessing techniques. To avoid this, we can rethink decorators as *high-order* functions instead of *closures* and use `functools.partial` to define decorated functions. In a similar line, [Gael Varoquaux suggested defining decorators as scopes in classes.
 ](http://gael-varoquaux.info/programming/decoration-in-python-done-right-decorating-and-pickling.html)
 
 Here, by using `partial`, different decorators can be applied to the function at different moments of the run-time and when required by the execution flow. In case a *decoration* is required system-wide, it can always be defined at the function module level, right after the function definition, as exemplified before.
 
-To my knowledge the topics discussed in this post are a obscure and not discussed much online. I have not encounter elsewhere a discussion on the architectural implications of and the conceptualizationt that *decorators* being actually *mutators*. And, Gael Varoquaux post from 2009 is the most complete discussions raising awareness of creating decorators as object scopes instead of closures. Here, I have used partials. Which do you think is more readable? It can be that `partials` have a more verbose creation process, but on ther hand, the decorator itself has a much cleaner writing than using classes.
+To my knowledge, the topics discussed in this post are obscure and not discussed much online. I have not encountered elsewhere a discussion on the architectural implications of and the conceptualization that *decorators* being actually *mutators*. And, Gael Varoquaux post from 2009 is the most complete discussion raising awareness of creating decorators as object scopes instead of closures. Here, I have used partials. Which do you think is more readable? It can be that `partials` have a more verbose creation process, but on the other hand, the decorator itself has a much cleaner footprint than classes.
 
 I hope this proposal and conclusions foster discussion within the Python community.
 
-* Is it a revelation for you, as it was for me, that decorators are actually mutators?
+* Is it a revelation for you, as it was for me, that decorators are mutators?
 * How do you feel about using `partial` to define decorators?
 * Did you encountered similar problems while crafting your packages?
 
 
-I look forward any comment from you, please [comment here for that](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/issues/13). And I appologize if I have missed some crucial literature on this, and I would love if you would point me to that, but you would agree that these topics do not emerge when reading the most common and well known literature in Python. Here, we are already going deep :-)
+I look forward to any comment from you, please [comment here for that](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/issues/13). And I apologize if I have missed some crucial literature on this, and I would love it if you would point me to that, but you would agree that these topics do not emerge when reading the most common and well-known literature in Python. Here, we are already going deep :-)
 
-Cheers,
+Cheers
