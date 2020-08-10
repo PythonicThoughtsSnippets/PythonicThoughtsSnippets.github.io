@@ -64,7 +64,7 @@ calculation(1, 2)
 
 `calculation(1, 2)` performed as expected.
 
-Though using the `@timeme` syntax suggested so forcefully in tutorials, I found by myself (Pain-Driven development as forged by others) that this construction hinders the development of **complex packages or applications**.
+Though using the `@timeme` syntax suggested so fiercely in tutorials, I found by myself (Pain-Driven development as forged by others) that this construction hinders the development of **complex packages or applications**.
 
 **The reason:** it is impossible (to my knowledge) to recover the original function using the decorator public interface. In other words, forever during runtime, `calculation` is now *decorated*, and such decoration cannot be undone. `calculation` is no longer the original `calculation` but is, instead, the decorated version.
 
