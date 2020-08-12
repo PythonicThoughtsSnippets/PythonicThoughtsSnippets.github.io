@@ -587,4 +587,6 @@ I hope this proposal and conclusions foster discussion within the Python communi
 
 I look forward to any comment from you, please [comment here for that](https://github.com/PythonicThoughtsSnippets/PTS-Code-Snippets/issues/13). And I apologize if I have missed some crucial literature on this, and I would love it if you would point me to that, but you would agree that these topics do not emerge when reading the most common and well-known literature in Python. Here, we are already going deep :-)
 
+Follow the twitter thread [here](https://twitter.com/vvcientificos/status/1292435637744934912) and [there](https://twitter.com/vvcientificos/status/1292435639766585345).
+
 Cheers
