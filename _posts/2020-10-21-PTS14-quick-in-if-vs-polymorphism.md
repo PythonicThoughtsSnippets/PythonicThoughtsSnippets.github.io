@@ -1,5 +1,5 @@
 ---
-title: "PTS 14: Quick assessment of `if` vs. polymorphism - simple case
+title: "PTS 14: Quick assessment of `if` vs. polymorphism - simple case"
 tags: [Python, Python 3.8, Python Programming, polymorphism, if-statements]
 author: "Joao MC Teixeira"
 ---
